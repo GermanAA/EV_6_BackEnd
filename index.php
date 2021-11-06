@@ -62,7 +62,9 @@ $b = array_values($details);
 $i =0;
 
 foreach ($b as $bb){
-    var_dump($b[$i]["Ciudad"]);
+    //var_dump($b[$i]["Ciudad"]);
+    $c=array($b[$i]["Ciudad"]);
+    var_dump($c);
     $i++;
 };
 
