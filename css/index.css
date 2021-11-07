@@ -42,7 +42,7 @@ video#vidFondo {
 .filtrosContenido{
   width: 100%;
   margin: 0 0;
-  background-color: #ac4d4d;
+  background-color: #648C7D;
   display: flex;
   flex-flow: row wrap;
   align-content: flex-start;
