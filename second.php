@@ -54,51 +54,13 @@
                     <h5>Resultados de la búsqueda:</h5>
                     <div class="divider"></div>
                     <button type="button" name="todos" class="btn-flat waves-effect" id="mostrarTodos">Mostrar Todos</button>
+
+                    <div id="Todos">
+                        <p id="tabla"></p>
+                    </div>
                 </div>
 
-                <?php
-                if ($_SERVER['REQUEST_METHOD'] == 'POST') {
-
-                    $data = file_get_contents("data-1.json");
-                    $products = json_decode($data, true);
-
-                    foreach ($products as $product) {
-                        echo '<pre>';
-
-                        echo (print_r($product, true));
-
-                        //echo ("<tr><td>" . $product["id"] . "</td>");
-                        //echo ( . $product["Direccion"] . "</td>");
-                    };
-
-                    $b = array_values($products);
-
-                    $i =0;
-                    
-                    foreach ($b as $bb){
-                        //var_dump($b[$i]["Ciudad"]);
-                        echo '<br>';
-                        echo($b[$i]["Id"]);
-                        echo '<br>';
-                        echo($b[$i]["Direccion"]);
-                        echo '<br>';
-                        echo($b[$i]["Ciudad"]);
-                        echo '<br>';
-                        echo($b[$i]["Telefono"]);
-                        echo '<br>';
-                        echo($b[$i]["Codigo_Postal"]);
-                        echo '<br>';
-                        echo($b[$i]["Tipo"]);
-                        echo '<br>';
-                        echo($b[$i]["Precio"]);
-                        echo '<br>';
-                        echo '<br>';
-                        
-                        //var_dump($c);
-                        $i++;
-                    };
-                }
-                ?>
+             
             </div>
         </div>
 

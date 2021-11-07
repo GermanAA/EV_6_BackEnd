@@ -31,3 +31,16 @@ $(document).ready(function(){
     })
    
   })
+
+    /* Cargar Tipo */
+
+    $(document).ready(function(){
+      $.ajax({
+        type: 'POST',
+        url: 'php/CargarTodo.php'
+      })
+
+        document.getElementById("tabla").innerHTML=$propiedades;
+      
+     
+    })
