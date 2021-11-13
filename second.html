@@ -5,7 +5,7 @@
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link type="text/css" rel="stylesheet" href="css/index.css"  media="screen,projection"/>
+  <link type="text/css" rel="stylesheet" href="css/index.css" media="screen,projection" />
   <title>Document</title>
 </head>
 
@@ -15,7 +15,7 @@
 
 
     <div class="contenedor">
-      
+
       <div class="card rowTitulo">
         <h1>Buscador</h1>
       </div>
@@ -48,18 +48,38 @@
           </div>
         </form>
       </div>
-    <!--Mostrar Todos -->
-      <div class="colContenido">
-        <div class="tituloContenido card">
-          <h5>Resultados de la búsqueda:</h5>
-          <div class="divider"></div>
-          <button type="button" name="todos" class="btn-flat waves-effect" id="mostrarTodos">Mostrar Todos</button>
+      <!--Mostrar Todos -->
 
-          
-        </div>
+
+      <div class="colContenido">
+
+        <form action="" id="formulario">
+
+          <div class="tituloContenido card">
+            <h5>Resultados de la búsqueda:</h5>
+            <div class="divider"></div>
+            <input type="submit" name="submit" value="Enviar" class="btn">
+
+          </div>
+
+        </form>
+
 
       </div>
     </div>
+
+    <h1> Datos</h1>
+    <ul id="datos">
+
+
+
+    </ul>
+
+    <button class="btn" id="boton"></button>
+
+    <li id="res">
+
+    </li>
 
     <script type="text/javascript" src="js/jquery-3.0.0.js"></script>
     <!-- #endregion  <script type="text/javascript" src="js/ion.rangeSlider.min.js"></script> -->
