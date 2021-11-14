@@ -1,3 +1,5 @@
+
+
 /* Cargar Ciudad */
 
 $(document).ready(function () {
@@ -33,50 +35,59 @@ $(document).ready(function () {
 });
 
 
-$(document).ready(function(){
+$(document).ready(function () {
 
   var HtmlNode = document.getElementById('datos');
 
-$.ajax({
+  console.log('correcto');
 
-  url: 'php/CargarTodo.php',
-  type: 'POST',
-  data: {},
-  success: function (data) {
+  document.querySelector('#boton').addEventListener('click', traerdatos);
 
-      HtmlNode.innerHTML = HtmlNode.innerHTML + '<li>' + [1].Ciudad + '</li>';
-    
-  }
-})
+  function traerdatos() {
 
-});
+    console.log('dentro de la funcion');
 
-console.log('correcto');
+    const xhttp = new XMLHttpRequest();
+    xhttp.open('GET', 'php/CargarTodo.php', true);
+    xhttp.send();
+    xhttp.onreadystatechange = function () {
+      if (this.readyState == 4 && this.status == 200);
+      //console.log(this.responseText);
+      let datos = JSON.parse(this.responseText);
+      //console.log(datos);
+      let res = document.querySelector('#res')
+      res.innerHTML = '';
+      for (let item of datos) {
+        //console.log(item);
+        
+        res.innerHTML += `
+        
+        <img src=img/home.jpg alt=MNo se pudo cargar>
+        <tr>${item.Id}</tr>
 
-document.querySelector('#boton').addEventListener('click',traerdatos);
+        
+        <tr>${item.Direccion}</tr>
+        <tr>${item.Ciudad}</tr>
+        <tr>${item.Telefono}</tr>
+        <tr>${item.Codigo_Postal}</tr>
+        <tr>${item.Tipo}</tr>
+        <tr>${item.Precio}</tr>
+        <tr>""</tr>
 
-function traerdatos(){
-  console.log('dentro de la funcion');
-  const xhttp = new XMLHttpRequest();
-  xhttp.open('GET','php/CargarTodo.php',true);
-  xhttp.send();
-  xhttp.onreadystatechange = function(){
-    if(this.readyState == 4 && this.status == 200);
-    //console.log(this.responseText);
-    let datos = JSON.parse(this.responseText);
-    //console.log(datos);
-    let res = document.querySelector('#res')
-    res.innerHTML='';
-    for(let item of datos){
-      //console.log(item);
-      res.innerHTML += `<li>${item.Id}</li>`
+
+        
+
+        
+        `
+
+
+      }
 
 
     }
-
-
   }
-}
+
+});
 
 
 

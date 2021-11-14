@@ -1,6 +1,7 @@
 /*
   Creación de una función personalizada para jQuery que detecta cuando se detiene el scroll en la página
 */
+/*
 $.fn.scrollEnd = function(callback, timeout) {
   $(this).scroll(function(){
     var $this = $(this);
@@ -10,6 +11,7 @@ $.fn.scrollEnd = function(callback, timeout) {
     $this.data('scrollTimeout', setTimeout(callback,timeout));
   });
 };
+*/
 /*
   Función que inicializa el elemento Slider
 */
@@ -49,5 +51,7 @@ function playVideoOnScroll(){
 }
 
 inicializarSlider();
-playVideoOnScroll();
+//playVideoOnScroll();
+
+
 
