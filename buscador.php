@@ -2,14 +2,20 @@
 $Ciudad = $_POST["ciudad"];
 $Tipo = $_POST["tipo"];
 $RangoPrecio = $_POST["precio"];
-//var_dump ($Ciudad);
-//var_dump($Tipo);
-//var_dump($RangoPrecio);
+$separador = ";";
+// Precios Array
+// Valores Contenidos String
+
+$Precios = explode($separador,$RangoPrecio);
+// Conversión a Numeros
+$PrecioMenor = intval($Precios[0]);
+$PrecioMayor = intval($Precios[1]);
 
 $data = file_get_contents("data-1.json");
+//Propiedades es un array - string
 $propiedades = json_decode($data, true);
 
-var_dump($propiedades);
+//var_dump($propiedades);
 
 $i = 0;
 
@@ -19,8 +25,18 @@ foreach ($propiedades as $propiedad) {
   
     $TipoPropiedad= $propiedades[$i]["Tipo"];
     $Ubicacion= $propiedades[$i]["Ciudad"];
+    //String
+    $cadenaPrecio = $propiedades[$i]["Precio"];
+    $caracteres = array(",","$");
+    //Se limpia las cadena de , y $
+    $PrecioPropiedad= str_replace($caracteres,'',$cadenaPrecio);
+    //Se convierte en número
+    $PrecioPropiedadNum = intval($PrecioPropiedad);
     //var_dump ($Ciudad);
     //var_dump ($Tipo);
+    //var_dump($PrecioPropiedad);
+   //var_dump($PrecioPropiedadNum);
+
     if ($Tipo == $TipoPropiedad and $Ciudad === "0"){
         //var_dump($c);
         echo "<img src=../img/home.jpg alt=MNo se pudo cargar>";
