@@ -11,6 +11,14 @@ video#vidFondo {
 
 }
 
+img{
+
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  padding: 5px;
+  width: 150px;
+}
+
 .contenedor{
 background-color: rgba(242, 242, 242, 0.5);
 width: 80%;

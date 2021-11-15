@@ -64,15 +64,13 @@ $(document).ready(function () {
         
         <img src=img/home.jpg alt=MNo se pudo cargar>
         <tr>${item.Id}</tr>
-
-        
         <tr>${item.Direccion}</tr>
         <tr>${item.Ciudad}</tr>
         <tr>${item.Telefono}</tr>
         <tr>${item.Codigo_Postal}</tr>
         <tr>${item.Tipo}</tr>
         <tr>${item.Precio}</tr>
-        <tr>""</tr>
+     
 
 
         
